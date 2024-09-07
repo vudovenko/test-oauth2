@@ -1,1 +1,13 @@
-spring.application.name=test-oauth2
+server:
+  # порт для веб-приложения
+  port: 8280
+
+spring:
+  application:
+    name: test-oauth2
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # ссылка на сертификаты сервера авторизации дл проверки целостности access token
+          jwk-set-uri: http://localhost:8180/realms/todoapp-realm/protocol/openid-connect/certs
